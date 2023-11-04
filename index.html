@@ -295,23 +295,39 @@ Thus the above python code was executed and verified successfully.
     <hr>
     <pre>
         <code>
-            Experiment 5 b Finding outliers using plot
- 
+            Experiment 5 c Plot the histogram, bar chart & pie chart on sample data 
 AIM:
-To visualize the outliers using plot
-CODE: (Prerequisite: Uber dataset)
-import pandas as pd
-import numpy as np
-import plotly.express as px
-df = pd.read_csv('C:/Users/91979/Downloads/Uber.csv')
-df
-#Find outliers
-df.describe()[['fare_amount','passenger_count']]
-#Visualising outliers using box plot
-fig = px.box(df,y = 'fare_amount')
-fig.show()
+To plot the histogram, bar chart & pie chart on sample data
+CODE:
+#Histogram
+import matplotlib.pyplot as plt
+numbers = [0.1, 0.5, 1, 1.5, 2, 4, 5.5, 6, 8, 9]
+plt.hist(numbers, bins = 3)
+plt.xlabel("Number")
+plt.ylabel("Frequency")
+plt.show()
+#Barchart
+import matplotlib.pyplot as plt
+# Our data
+labels = ["JavaScript", "Java", "Python", "C#"]
+usage = [69.8, 45.3, 38.8, 34.4]
+# Generating the y positions. 
+y_positions = range(len(labels))
+# Creating our bar plot
+plt.bar(y_positions, usage)
+plt.xticks(y_positions, labels)
+plt.ylabel("Usage (%)")
+plt.title("Programming language usage")
+plt.show()
+#Piechart
+import matplotlib.pyplot as plt
+sizes = [25, 20, 45, 10]
+labels = ["Cats", "Dogs", "Tigers", "Goats"]
+plt.pie(sizes, labels = labels, autopct = "%.2f")
+plt.show()
 RESULT:
 Thus the above python code was executed and verified successfully.
+
         </code>
     </pre>
     <br>
